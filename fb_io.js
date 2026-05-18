@@ -30,7 +30,13 @@ function fb_popupLogin(){
         GLOBAL_user = result.user; //save the user details object to a global variable
         console.log("User has logged in")
     });
- };
+};
+
+function fb_logout(){
+    authenticationListener(); //this line turns off the listener
+    firebase.auth().signOut();
+    console.log("logged out")
+};
 
 function fb_error(){
     // Don't forget your error handling!

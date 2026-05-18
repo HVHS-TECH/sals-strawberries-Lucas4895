@@ -1,21 +1,20 @@
 
 console.log("Running Sal's Strawberries")
 
-function writeForm(){
+function fb_write(){
     // Get the form data
     const favoriteFruit = document.getElementById("favoriteFruit").value;
-    let username = document.getElementById("name").value;
-}
-
-function usersFavouriteFruits(){
-  console.log("Users' favourite fruits")
-  firebase.database().ref('/').set(
+    const username = document.getElementById("name").value;
+    console.log(username + "'s favourite fruit is " + favoriteFruit)
+    firebase.database().ref('/').set(
     {
     users: {
         username: {
-            favoriteFruit: "favoriteFruit"
-        }
+            fruit: favoriteFruit
+            }
         }
       }
   )
 }
+
+
