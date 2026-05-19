@@ -16,7 +16,7 @@ function fb_authenticate(){
 
 function fb_handleLogin(_user){
     if (_user){
-        console.log("User is logged in")
+        console.log("User is logged in. Welcome ")
     } else {
         console.log("User is Not logged in - Starting the popup process")
         fb_popupLogin();
