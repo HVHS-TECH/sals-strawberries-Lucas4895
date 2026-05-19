@@ -8,7 +8,6 @@
  **************************************************************/
 var GLOBAL_user;
 var authenticationListener; //global variable to store the listener
-const userEmail = GLOBAL_user.email
 
 function fb_authenticate(){
     authenticationListener = firebase.auth().onAuthStateChanged(fb_handleLogin);
@@ -39,7 +38,10 @@ function fb_logout(){
     console.log("logged out")
 };
 
+
+
 function fb_sendEmail(){
+    const userEmail = GLOBAL_user.email
     console.log("To: " + userEmail + ", welcome!")
 }
 
