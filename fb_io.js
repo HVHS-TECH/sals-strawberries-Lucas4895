@@ -16,7 +16,7 @@ function fb_authenticate(){
 
 function fb_handleLogin(_user){
     if (_user){
-        console.log("User is logged in. Welcome ")
+        console.log("User is logged in. ")
     } else {
         console.log("User is Not logged in - Starting the popup process")
         fb_popupLogin();
@@ -42,6 +42,8 @@ function fb_logout(){
 
 function fb_sendEmail(){
     const userEmail = GLOBAL_user.email
+    alert('check your mail!')
+    window.open('mailto:userEmail');
     console.log("To: " + userEmail + ", welcome!")
 }
 

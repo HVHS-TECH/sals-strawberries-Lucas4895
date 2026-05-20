@@ -6,7 +6,6 @@ function fb_write(){
     const favoriteFruit = document.getElementById("favoriteFruit").value;
     const username = document.getElementById("name").value;
     const fruitQuantity = document.getElementById("fruitQuantity").value;
-    const userEmail = username.email
     console.log(username + "'s favourite fruit is " + favoriteFruit + ". " + fruitQuantity + " serving(s) per week!")
 
     firebase.database().ref('/users/' + username).set(
