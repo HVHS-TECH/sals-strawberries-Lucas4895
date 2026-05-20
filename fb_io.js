@@ -43,7 +43,7 @@ function fb_logout(){
 function fb_sendEmail(){
     const userEmail = GLOBAL_user.email
     alert('check your mail!')
-    window.open('mailto:userEmail');
+    window.open('mailto:'+userEmail);
     console.log("To: " + userEmail + ", welcome!")
 }
 
