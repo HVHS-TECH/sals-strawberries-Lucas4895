@@ -42,8 +42,10 @@ function fb_logout(){
 
 function fb_sendEmail(){
     const userEmail = GLOBAL_user.email
+    const userUID = GLOBAL_user.userUID
     window.open('mailto:'+ userEmail);
-    alert('check your mail!')    
+    alert('check your mail!')  
+    console.log(userUID)  
     console.log("To: " + userEmail + ", welcome!")
 }
 
