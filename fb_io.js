@@ -18,7 +18,7 @@ function fb_handleLogin(_user){
     if (_user){
         console.log("User is logged in. ")
     } else {
-        console.log("User is Not logged in - Starting the popup process")
+        alert("User is Not logged in - Starting the popup process")
         fb_popupLogin();
     }
 }
