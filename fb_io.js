@@ -25,11 +25,18 @@ function fb_handleLogin(_user){
 
 function fb_popupLogin(){
     var provider = new firebase.auth.GoogleAuthProvider();
+    const userID = GLOBAL_user.uid
+    const username = GLOBAL_user.displayName
 
     firebase.auth().signInWithPopup(provider).then((result) => {
         GLOBAL_user = result.user; //save the user details object to a global variable
         console.log("User has logged in")
     });
+    firebase.database().ref('/users/' + userID).set(
+        {
+            name: username
+        }
+    )
 };
 
 function fb_logout(){
@@ -42,10 +49,10 @@ function fb_logout(){
 
 function fb_sendEmail(){
     const userEmail = GLOBAL_user.email
-    const userUID = GLOBAL_user.uid
+    const userID = GLOBAL_user.uid
     window.open('mailto:'+ userEmail);
     alert('check your mail!')  
-    console.log(userUID)  
+    console.log(userID)  
     console.log("To: " + userEmail + ", welcome!")
 }
 
