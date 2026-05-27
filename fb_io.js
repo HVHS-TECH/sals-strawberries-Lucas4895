@@ -30,17 +30,6 @@ function fb_popupLogin(){
         GLOBAL_user = result.user; //save the user details object to a global variable
         console.log("User has logged in")
     });
-
-    const userID = GLOBAL_user.uid
-    const username = GLOBAL_user.displayName
-    
-    firebase.database().ref('/').set(
-        {
-            userDetails: {
-                uid: userID
-            }
-        }
-    )
 };
 
 function fb_logout(){
@@ -49,14 +38,28 @@ function fb_logout(){
     console.log("logged out")
 };
 
+function fb_write(){
+    // Get the form data
+    const favoriteFruit = document.getElementById("favoriteFruit").value;
+    const displayName = document.getElementById("name").value;
+    const fruitQuantity = document.getElementById("fruitQuantity").value;
+    const userID = GLOBAL_user.uid
+    console.log(username + "'s favourite fruit is " + favoriteFruit + ". " + fruitQuantity + " serving(s) per week!")
 
-
+    firebase.database().ref('/users/' + userID).set(
+        {
+            username: displayName,
+            fruit: favoriteFruit,
+            quantity: fruitQuantity
+        }
+    )
+}
 function fb_sendEmail(){
     const userEmail = GLOBAL_user.email
-    const userID = GLOBAL_user.uid
+    const userUID = GLOBAL_user.uid
     window.open('mailto:'+ userEmail);
     alert('check your mail!')  
-    console.log(userID)  
+    console.log(userUID)  
     console.log("To: " + userEmail + ", welcome!")
 }
 
