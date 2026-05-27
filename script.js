@@ -1,4 +1,3 @@
-
 console.log("Running Sal's Strawberries")
 
 function fb_write(){
