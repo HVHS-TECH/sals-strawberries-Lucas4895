@@ -44,7 +44,7 @@ function fb_write(){
     const displayName = document.getElementById("name").value;
     const fruitQuantity = document.getElementById("fruitQuantity").value;
     const userID = GLOBAL_user.uid
-    console.log(username + "'s favourite fruit is " + favoriteFruit + ". " + fruitQuantity + " serving(s) per week!")
+    console.log(displayName + "'s favourite fruit is " + favoriteFruit + ". " + fruitQuantity + " serving(s) per week!")
 
     firebase.database().ref('/users/' + userID).set(
         {
