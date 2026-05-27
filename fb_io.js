@@ -32,9 +32,11 @@ function fb_popupLogin(){
         GLOBAL_user = result.user; //save the user details object to a global variable
         console.log("User has logged in")
     });
-    firebase.database().ref('/users/' + userID).set(
+    firebase.database().ref('/').set(
         {
-            name: username
+            userDetails: {
+                uid: userID
+            }
         }
     )
 };
